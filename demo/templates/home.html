@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DEMO</title>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>List of Products</h1>
+            {% for product in products %}
+            <div class="card shadow mt-2 mb-2" style="width:50%;">
+                <div class="card-header">
+                    {{product.name}}
+                </div>
+                <div class="card-body">
+                    <p>Price: {{ product.price}}</p>
+                    <p>Sku: {{product.sku}}</p>
+                </div>
+                <a href="#" class="btn btn-primary btn-sm float-end">Add to Cart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
